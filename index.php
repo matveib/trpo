@@ -9,6 +9,10 @@ require_once("matvei/Linear.php");
 require_once("matvei/Square.php");
 require_once("matvei/Log.php");
 
+if (file_exists('./version')) {
+	matvei\Log::log('Version '.trim(file_get_contents('./version')));
+}
+
 $co_arr = [];
 foreach(["a", "b", "c"] as $co) {
 	echo "Enter ".$co.": ";
